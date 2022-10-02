@@ -12,7 +12,10 @@ public class AnimalController : MonoBehaviour
     [SerializeField] private GameObject _text;
     [SerializeField] private GameObject  _button;
     private bool _buttonIspressed = false;
-    private bool timedOut = false;
+    private bool timedOut;
+
+    private float _timeOut;
+    private int _timeLeft = 100;
     
 
     public void Start()
@@ -20,25 +23,46 @@ public class AnimalController : MonoBehaviour
         StartCoroutine(Idle());
     }
 
+
+    private void FixedUpdate()
+    {
+        time.value = _timeLeft;
+        _timeOut += 1 * Time.deltaTime;
+        if (_timeOut >= 1)
+        {
+            _timeLeft -= 1;
+            _timeOut = 0;
+        }
+        return;
+    }
     IEnumerator WannaEat()
     {
         _text.SetActive(true);
         _button.SetActive(true);
 
-        while(true)
-        {
+        //while (true)
+        //{
+        //    time.value = _timeLeft;
+        //    _timeOut += 1 * Time.deltaTime;
+        //    if (_timeOut >= 1)
+        //    {
+        //        _timeLeft -= 1;
+        //        _timeOut = 0;
+        //    }
+        //    break;
+        //}
+        
+
+        //while(true)
+        //{
             
-            if (time.value == 0)
-            { 
-                hp.value -= 1f;
-                continue;
-            }
-
-            time.value--;
-
-
-
-        }
+        //    if (time.value == 0)
+        //    { 
+        //        hp.value -= 1f;
+        //        continue;
+        //    }
+        //    time.value--;
+        //}
         
         
         yield return new WaitUntil((() => _buttonIspressed == true || time.value == 0));
