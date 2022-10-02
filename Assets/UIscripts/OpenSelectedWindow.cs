@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenShop : MonoBehaviour
+public class OpenSelectedWindow : MonoBehaviour
 {
     public Transform box;
     public CanvasGroup Back;
@@ -12,9 +12,8 @@ public class OpenShop : MonoBehaviour
         Back.alpha = 0;
         Back.LeanAlpha(1, 0.5f);
 
-        box.localPosition = new Vector2(0, -Screen.width);
-        //box.localPosition = Vector2.zero;
-        box.LeanMoveLocalY(0, 0.5f).setEaseOutExpo().delay = 0.1f;
+        box.localPosition = Vector2.zero;
+        box.LeanMoveLocalY(75, 0.5f).setEaseOutExpo().delay = 0.1f;
     }
 
 
