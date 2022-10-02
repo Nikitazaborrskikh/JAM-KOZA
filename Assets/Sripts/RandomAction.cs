@@ -13,9 +13,6 @@ public class RandomAction : MonoBehaviour
     [SerializeField] private TMP_Text text;
     private float timer;
     private float maintime = 10f;
-    
-   
-   
 
     private void Start()
     {
@@ -24,12 +21,8 @@ public class RandomAction : MonoBehaviour
 
     private void Update()
     {
-        
-            text.text = actions[Random.Range(0, actions.Length)];
-            Debug.Log(text.text);
-            timer = maintime;
-        
+        text.text = actions[Random.Range(0, actions.Length)];
+        Debug.Log(text.text);
+        timer = maintime;
     }
-    
-    
 }

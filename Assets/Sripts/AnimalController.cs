@@ -9,7 +9,7 @@ public class AnimalController : MonoBehaviour
 {
     [SerializeField] private Slider hp;
     [SerializeField] private Slider timer;
-    [SerializeField] private GameObject _text;
+    //[SerializeField] private GameObject _text;
     [SerializeField] private GameObject  _button;
     private bool _buttonIspressed = false;
     private float _timeOut;
@@ -29,7 +29,7 @@ public class AnimalController : MonoBehaviour
     
     IEnumerator WannaEat()
     {
-        _text.SetActive(true);
+       //_text.SetActive(true);
         _button.SetActive(true);
         yield return new WaitForSeconds(5f);
         
@@ -50,14 +50,14 @@ public class AnimalController : MonoBehaviour
 
     IEnumerator Idle()
     {
-        _text.SetActive(false);
+        //_text.SetActive(false);
         //_button.SetActive(false);
 
 
         _buttonIspressed = false;
         timer.value = timer.maxValue;
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(10f);
         StartCoroutine(WannaEat());
     }
 
