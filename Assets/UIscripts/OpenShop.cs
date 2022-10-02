@@ -12,9 +12,9 @@ public class OpenShop : MonoBehaviour
         Back.alpha = 0;
         Back.LeanAlpha(1, 0.5f);
 
-        box.localPosition = new Vector2(0, -Screen.width);
-        //box.localPosition = Vector2.zero;
-        box.LeanMoveLocalY(0, 0.5f).setEaseOutExpo().delay = 0.1f;
+        //box.localPosition = new Vector2(0, -Screen.width);
+        box.localPosition = Vector2.zero;
+        box.LeanMoveLocalY(0, 660).setEaseOutExpo().delay = 0.1f;
     }
 
 
