@@ -15,6 +15,8 @@ public class AnimalController : MonoBehaviour
     private float _timeOut;
     private int _timeLeft = 100;
 
+    private OpenShop _closeWindowSelected;
+
     
     
 
@@ -49,7 +51,9 @@ public class AnimalController : MonoBehaviour
     IEnumerator Idle()
     {
         _text.SetActive(false);
-        _button.SetActive(false);
+        //_button.SetActive(false);
+
+
         _buttonIspressed = false;
         timer.value = timer.maxValue;
         
