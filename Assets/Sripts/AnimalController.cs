@@ -8,14 +8,14 @@ using UnityEngine.Animations;
 public class AnimalController : MonoBehaviour
 {
     [SerializeField] private Slider hp;
-    [SerializeField] private Slider time;
+    [SerializeField] private Slider timer;
     [SerializeField] private GameObject _text;
     [SerializeField] private GameObject  _button;
     private bool _buttonIspressed = false;
-    private bool timedOut;
-
     private float _timeOut;
     private int _timeLeft = 100;
+
+    
     
 
     public void Start()
@@ -24,49 +24,26 @@ public class AnimalController : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
-    {
-        time.value = _timeLeft;
-        _timeOut += 1 * Time.deltaTime;
-        if (_timeOut >= 1)
-        {
-            _timeLeft -= 1;
-            _timeOut = 0;
-        }
-        return;
-    }
+    
     IEnumerator WannaEat()
     {
         _text.SetActive(true);
         _button.SetActive(true);
-
-        //while (true)
-        //{
-        //    time.value = _timeLeft;
-        //    _timeOut += 1 * Time.deltaTime;
-        //    if (_timeOut >= 1)
-        //    {
-        //        _timeLeft -= 1;
-        //        _timeOut = 0;
-        //    }
-        //    break;
-        //}
+        yield return new WaitForSeconds(5f);
         
-
-        //while(true)
-        //{
+        if (_buttonIspressed == true)
+        {
+            StartCoroutine(Idle());
             
-        //    if (time.value == 0)
-        //    { 
-        //        hp.value -= 1f;
-        //        continue;
-        //    }
-        //    time.value--;
-        //}
-        
-        
-        yield return new WaitUntil((() => _buttonIspressed == true || time.value == 0));
-        StartCoroutine(Idle());
+        }
+        else
+        {
+            StartCoroutine(TakeDamage());
+            StartCoroutine(Idle());
+        }
+
+        yield return null;
+
     }
 
     IEnumerator Idle()
@@ -74,32 +51,19 @@ public class AnimalController : MonoBehaviour
         _text.SetActive(false);
         _button.SetActive(false);
         _buttonIspressed = false;
-        time.value = time.maxValue;
+        timer.value = timer.maxValue;
+        
         yield return new WaitForSeconds(1f);
         StartCoroutine(WannaEat());
     }
 
-    private IEnumerator TimeoutChecker(float timeout)
+    IEnumerator TakeDamage()
     {
-        timedOut = false;
-        while (timeout > 0)
-        {
-            timeout -= 0.01f;
-            if (timeout <= 0)
-            {
-                timedOut = true;
-                StopCoroutine(TimeoutChecker(time.value));
-                
-                yield return null;
-                
-                
-            }
-        }
-
-        
-        
-        
+        hp.value -= 1;
+        yield return null;
     }
+
+    
     public void Feed()
     {
         _buttonIspressed = true;
@@ -107,8 +71,15 @@ public class AnimalController : MonoBehaviour
         StartCoroutine(Idle());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Debug.Log(time.value);
+        timer.value = _timeLeft;
+        _timeOut += 1 * Time.deltaTime;
+        if (_timeOut >= 1)
+        {
+            _timeLeft -= 1;
+            _timeOut = 0;
+        }
+        return;
     }
 }
