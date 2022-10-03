@@ -31,6 +31,7 @@ public class AnimalController : MonoBehaviour
     public void anwsersBttns(int index)
     {
         stopTime = true;
+        //здесь выключать
         if (texts[index].text.ToString() == crntQ.anwsers[0]) score.OnTrueClick();
         else
         {
@@ -40,7 +41,7 @@ public class AnimalController : MonoBehaviour
         }
 
         StartCoroutine(Wait());
-        QuestionGenerate();
+        
     }
 
     void QuestionGenerate()
@@ -59,14 +60,16 @@ public class AnimalController : MonoBehaviour
 
     IEnumerator timer()
     {
+        //здесь включать
         Timer.text = time.ToString();
-        time = 5;
+        time = 6;
         stopTime = false;
         while (time > 0)
         {
             if (!stopTime)
             {
                 time--;
+                Timer.text = time.ToString();
                 yield return new WaitForSeconds(1);
             }
             else yield break;
@@ -75,8 +78,8 @@ public class AnimalController : MonoBehaviour
     }
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5);
-        
+        yield return new WaitForSeconds(10);
+        QuestionGenerate();
 
     }
 
