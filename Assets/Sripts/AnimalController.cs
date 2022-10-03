@@ -24,7 +24,10 @@ public class AnimalController : MonoBehaviour
     [SerializeField] private Slider _hp;
 
     [SerializeField] private GameObject panel;
-    
+    [SerializeField] private GameObject _animalPrefab;
+    [SerializeField] private GameObject _gameController;
+    private Shop shop;
+
 
     public void Start()
     {
@@ -102,7 +105,10 @@ public class AnimalController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        shop.DeathAnimal();
+        //_animalPrefab.SetActive(false);
+        Destroy(_animalPrefab);
+        Destroy(_gameController);
     }
 }
 [System.Serializable]

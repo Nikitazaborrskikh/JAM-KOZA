@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using TMPro;
-using TMPro.EditorUtilities;
 
 public class RandomAction : MonoBehaviour
 {
