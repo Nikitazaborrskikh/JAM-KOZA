@@ -423,7 +423,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 5.35, y: 0}
   m_SizeDelta: {x: 20.21, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -465,6 +465,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35243162}
   m_CullTransparentMesh: 1
+--- !u!1 &40034726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 40034728}
+  - component: {fileID: 40034727}
+  m_Layer: 0
+  m_Name: GameController2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &40034727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40034726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a343aa5ee6efcb94a9918ce49c217cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - question: Feed me!
+    anwsers:
+    - Feed
+    - Wash
+    - Comb
+    - Stroke
+  - question: Wash me!
+    anwsers:
+    - Wash
+    - Feed
+    - Comb
+    - Stroke
+  - question: Comb me!
+    anwsers:
+    - Comb
+    - Feed
+    - Stroke
+    - Wash
+  - question: Stroke me!
+    anwsers:
+    - Stroke
+    - Wash
+    - Feed
+    - Comb
+  text: {fileID: 787213160}
+  texts:
+  - {fileID: 799720191}
+  - {fileID: 1294017507}
+  - {fileID: 1357857018}
+  - {fileID: 160218619}
+  score: {fileID: 255311315}
+  Timer: {fileID: 696828127}
+  _hp: {fileID: 118173265}
+  panel: {fileID: 2078100534}
+--- !u!4 &40034728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40034726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04360926, y: -2.7334812, z: -8.959828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &59724927
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,9 +855,9 @@ RectTransform:
   m_Father: {fileID: 1000638593}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356.25, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 180.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &90745386
@@ -866,7 +945,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1729054587}
+      - m_Target: {fileID: 40034727}
         m_TargetAssemblyTypeName: AnimalController, Assembly-CSharp
         m_MethodName: anwsersBttns
         m_Mode: 3
@@ -3951,85 +4030,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394943481}
   m_CullTransparentMesh: 1
---- !u!1 &459041389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 459041391}
-  - component: {fileID: 459041392}
-  m_Layer: 0
-  m_Name: GameController2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &459041391
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459041389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04360926, y: -2.7334812, z: -8.959828}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &459041392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459041389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1eb3efcf8c327b40b1436f7e1624d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questions:
-  - question: Feed me!
-    anwsers:
-    - Feed
-    - Wash
-    - Comb
-    - Stroke
-  - question: Wash me!
-    anwsers:
-    - Wash
-    - Feed
-    - Comb
-    - Stroke
-  - question: Comd me!
-    anwsers:
-    - Comb
-    - Feed
-    - Stroke
-    - Wash
-  - question: "St\u043Aoke me!"
-    anwsers:
-    - Stroke
-    - Wash
-    - Feed
-    - Comb
-  text: {fileID: 787213160}
-  texts:
-  - {fileID: 799720191}
-  - {fileID: 1294017507}
-  - {fileID: 1357857018}
-  - {fileID: 160218619}
-  score: {fileID: 255311315}
-  Timer: {fileID: 696828127}
-  _hp: {fileID: 118173265}
-  panel: {fileID: 2078100534}
 --- !u!1 &477670342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,9 +4598,9 @@ RectTransform:
   m_Father: {fileID: 1000638593}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 543.75, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 180.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565059930
@@ -4688,7 +4688,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1729054587}
+      - m_Target: {fileID: 40034727}
         m_TargetAssemblyTypeName: AnimalController, Assembly-CSharp
         m_MethodName: anwsersBttns
         m_Mode: 3
@@ -8489,9 +8489,9 @@ RectTransform:
   m_Father: {fileID: 1000638593}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 731.25, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 180.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057939950
@@ -8579,7 +8579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1729054587}
+      - m_Target: {fileID: 40034727}
         m_TargetAssemblyTypeName: AnimalController, Assembly-CSharp
         m_MethodName: anwsersBttns
         m_Mode: 3
@@ -8937,7 +8937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1119785310
 Transform:
   m_ObjectHideFlags: 0
@@ -15283,9 +15283,9 @@ RectTransform:
   m_Father: {fileID: 1000638593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168.75, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 180.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145288883
@@ -15304,55 +15304,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1729054587}
-          m_TargetAssemblyTypeName: AnimalController, Assembly-CSharp
-          m_MethodName: Feed
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: OnClickScore, Assembly-CSharp
-          m_MethodName: OnTrueClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: OpenSelectedWindow, Assembly-CSharp
-          m_MethodName: CloseShop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: ChangeAction, Assembly-CSharp
-          m_MethodName: OnClosePanel
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!114 &2145288884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15397,7 +15349,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1729054587}
+      - m_Target: {fileID: 40034727}
         m_TargetAssemblyTypeName: AnimalController, Assembly-CSharp
         m_MethodName: anwsersBttns
         m_Mode: 3
