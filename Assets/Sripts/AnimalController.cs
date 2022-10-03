@@ -45,6 +45,8 @@ public class AnimalController : MonoBehaviour
         stopTime = true;
         //здесь выключать
         panel.SetActive(false);
+
+
         if (texts[index].text.ToString() == crntQ.anwsers[0])
         {
             _goodSound.Play();

@@ -15,6 +15,8 @@ public class Shop : MonoBehaviour
     //[SerializeField] private Vector3 _roomPosition;
 
 
+    public OnClickScore onClickScore;
+
     private void Update()
     {
         
@@ -23,8 +25,7 @@ public class Shop : MonoBehaviour
    
 
     public void OnBuyAnimal()
-    {
-        
+    {       
         _animalPrefab.SetActive(true);
         _gameController.SetActive(true);
         //_openAll.OpenAll();
