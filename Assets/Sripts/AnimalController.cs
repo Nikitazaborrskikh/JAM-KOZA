@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Animations;
 using TMPro;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 
 
@@ -115,9 +116,10 @@ public class AnimalController : MonoBehaviour
 
     public void Die()
     {
-        shop.DeathAnimal();
-        _animalPrefab.SetActive(false);
-        this.gameObject.SetActive(false);
+        SceneManager.LoadScene(4);
+        //shop.DeathAnimal();
+        //_animalPrefab.SetActive(false);
+        //this.gameObject.SetActive(false);
         //Destroy(_animalPrefab);
         //Destroy(_gameController);
     }
