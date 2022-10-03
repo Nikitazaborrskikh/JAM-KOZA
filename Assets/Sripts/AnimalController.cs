@@ -26,12 +26,16 @@ public class AnimalController : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject _animalPrefab;
     [SerializeField] private GameObject _gameController;
+    [SerializeField] private AudioSource _goodSound;
+    [SerializeField] private AudioSource _badSound;
+    [SerializeField] private AudioSource _piscSound;
     private Shop shop;
 
 
     public void Start()
     {
         qList = new List<object>(questions);
+        shop = GetComponent<Shop>();
         QuestionGenerate();
     }
 
@@ -40,12 +44,17 @@ public class AnimalController : MonoBehaviour
         stopTime = true;
         //здесь выключать
         panel.SetActive(false);
-        if (texts[index].text.ToString() == crntQ.anwsers[0]) score.OnTrueClick();
+        if (texts[index].text.ToString() == crntQ.anwsers[0])
+        {
+            _goodSound.Play();
+            score.OnTrueClick(); 
+        }
         else
         {
+            _badSound.Play();
             score.OnFalseClick();
             TakeDamage();
-            
+
         }
           
         StartCoroutine(Wait());
@@ -69,6 +78,7 @@ public class AnimalController : MonoBehaviour
     IEnumerator timer()
     {
         //здесь включать
+        _piscSound.Play();
         panel.SetActive(true);
         Timer.text = time.ToString();
         time = 6;
@@ -106,9 +116,10 @@ public class AnimalController : MonoBehaviour
     public void Die()
     {
         shop.DeathAnimal();
-        //_animalPrefab.SetActive(false);
-        Destroy(_animalPrefab);
-        Destroy(_gameController);
+        _animalPrefab.SetActive(false);
+        this.gameObject.SetActive(false);
+        //Destroy(_animalPrefab);
+        //Destroy(_gameController);
     }
 }
 [System.Serializable]
