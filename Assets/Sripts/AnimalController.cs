@@ -39,7 +39,7 @@ public class AnimalController : MonoBehaviour
             TakeDamage();
             
         }
-
+          
         StartCoroutine(Wait());
         
     }
@@ -78,7 +78,9 @@ public class AnimalController : MonoBehaviour
     }
     IEnumerator Wait()
     {
+        
         yield return new WaitForSeconds(10);
+        // сделать выплывающие кнопки
         QuestionGenerate();
 
     }
