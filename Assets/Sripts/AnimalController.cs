@@ -24,6 +24,8 @@ public class AnimalController : MonoBehaviour
     [SerializeField] private Slider _hp;
 
     [SerializeField] private GameObject panel;
+    
+
     public void Start()
     {
         qList = new List<object>(questions);
