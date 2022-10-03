@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 
 
-public class AnimalController : MonoBehaviour
+public class AnimalControllerTwo : MonoBehaviour
 {
 
     public QuestionList[] questions;
@@ -23,7 +23,10 @@ public class AnimalController : MonoBehaviour
     public TMP_Text Timer;
     [SerializeField] private Slider _hp;
 
+    private OpenSelectedWindow selectedWindow;
+
     [SerializeField] private GameObject panel;
+
     public void Start()
     {
         qList = new List<object>(questions);
@@ -33,37 +36,38 @@ public class AnimalController : MonoBehaviour
     public void anwsersBttns(int index)
     {
         stopTime = true;
-        //Р·РґРµСЃСЊ РІС‹РєР»СЋС‡Р°С‚СЊ
+
         panel.SetActive(false);
+        //здесь выключать
         if (texts[index].text.ToString() == crntQ.anwsers[0]) score.OnTrueClick();
         else
         {
             score.OnFalseClick();
             TakeDamage();
-            
+
         }
-          
+
         StartCoroutine(Wait());
-        
+
     }
 
     void QuestionGenerate()
     {
         StartCoroutine(timer());
         crntQ = qList[Random.Range(0, qList.Count)] as QuestionList;
-     text.text = crntQ.question;
-     List<string> anwsers = new List<string>(crntQ.anwsers);
-     for (int i = 0; i < crntQ.anwsers.Length; i++)
-     {
-         int rand = Random.Range(0, anwsers.Count);
-         texts[i].text = anwsers[rand];
-         anwsers.RemoveAt(rand);
-     }
+        text.text = crntQ.question;
+        List<string> anwsers = new List<string>(crntQ.anwsers);
+        for (int i = 0; i < crntQ.anwsers.Length; i++)
+        {
+            int rand = Random.Range(0, anwsers.Count);
+            texts[i].text = anwsers[rand];
+            anwsers.RemoveAt(rand);
+        }
     }
 
     IEnumerator timer()
     {
-        //Р·РґРµСЃСЊ РІРєР»СЋС‡Р°С‚СЊ
+        //здесь включать
         panel.SetActive(true);
         Timer.text = time.ToString();
         time = 6;
@@ -82,14 +86,15 @@ public class AnimalController : MonoBehaviour
     }
     IEnumerator Wait()
     {
-        
+
         yield return new WaitForSeconds(10);
-        // СЃРґРµР»Р°С‚СЊ РІС‹РїР»С‹РІР°СЋС‰РёРµ РєРЅРѕРїРєРё
+        // сделать выплывающие кнопки
+       
         QuestionGenerate();
 
     }
 
-    public void TakeDamage()
+    private void TakeDamage()
     {
         _hp.value -= 1;
         if (_hp.value <= 0)
@@ -104,7 +109,7 @@ public class AnimalController : MonoBehaviour
     }
 }
 [System.Serializable]
-public class QuestionList
+public class QuestionListTwo
 {
     public string question;
     public string[] anwsers = new string[4];
