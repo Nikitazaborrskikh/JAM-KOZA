@@ -6,10 +6,8 @@ using TMPro;
 
 public class OnClickScore : MonoBehaviour
 {
-    [SerializeField] private Button _trueButton;
-    [SerializeField] private Button _FalseButton1;
-    [SerializeField] private Button _FalseButton2;
-    [SerializeField] private Button _FalseButton3;
+    
+    private bool _correctButtonIsPressed = false;
 
     [SerializeField] private TMP_Text _scoreText;
 
@@ -19,8 +17,10 @@ public class OnClickScore : MonoBehaviour
     private void Awake()
     {
         _scoreText.text = "0";
-    }   
+        
+    }
 
+   
     public void OnTrueClick()
     {
         _score++;

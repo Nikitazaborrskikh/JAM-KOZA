@@ -7,7 +7,7 @@ public class OpenSelectedWindow : MonoBehaviour
     public Transform box;
     public CanvasGroup Back;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         Back.alpha = 0;
         Back.LeanAlpha(1, 0.5f);
@@ -23,7 +23,7 @@ public class OpenSelectedWindow : MonoBehaviour
         box.LeanMoveLocalY(-Screen.width, 0.5f).setEaseInExpo().setOnComplete(Complete);
     }
 
-    void Complete()
+    public void Complete()
     {
         gameObject.SetActive(false);
     }

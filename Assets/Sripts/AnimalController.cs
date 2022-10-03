@@ -4,86 +4,99 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations;
+using TMPro;
+using Random = UnityEngine.Random;
+
+
 
 public class AnimalController : MonoBehaviour
 {
-    [SerializeField] private Slider hp;
-    [SerializeField] private Slider timer;
-    //[SerializeField] private GameObject _text;
-    [SerializeField] private GameObject  _button;
-    private bool _buttonIspressed = false;
-    private float _timeOut;
-    private int _timeLeft = 100;
 
-    private OpenShop _closeWindowSelected;
-
-    
-    
-
+    public QuestionList[] questions;
+    public TMP_Text text;
+    private List<object> qList;
+    public TMP_Text[] texts;
+    private QuestionList crntQ;
+    private int time = 5;
+    private bool stopTime = true;
+    public OnClickScore score;
+    public TMP_Text Timer;
+    [SerializeField] private Slider _hp;
     public void Start()
     {
-        StartCoroutine(Idle());
+        qList = new List<object>(questions);
+        QuestionGenerate();
     }
 
-
-    
-    IEnumerator WannaEat()
+    public void anwsersBttns(int index)
     {
-       //_text.SetActive(true);
-        _button.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        
-        if (_buttonIspressed == true)
-        {
-            StartCoroutine(Idle());
-            
-        }
+        stopTime = true;
+        if (texts[index].text.ToString() == crntQ.anwsers[0]) score.OnTrueClick();
         else
         {
-            StartCoroutine(TakeDamage());
-            StartCoroutine(Idle());
+            score.OnFalseClick();
+            TakeDamage();
+            
         }
 
-        yield return null;
-
+        StartCoroutine(Wait());
+        QuestionGenerate();
     }
 
-    IEnumerator Idle()
+    void QuestionGenerate()
     {
-        //_text.SetActive(false);
-        //_button.SetActive(false);
-
-
-        _buttonIspressed = false;
-        timer.value = timer.maxValue;
-        
-        yield return new WaitForSeconds(10f);
-        StartCoroutine(WannaEat());
+        StartCoroutine(timer());
+        crntQ = qList[Random.Range(0, qList.Count)] as QuestionList;
+     text.text = crntQ.question;
+     List<string> anwsers = new List<string>(crntQ.anwsers);
+     for (int i = 0; i < crntQ.anwsers.Length; i++)
+     {
+         int rand = Random.Range(0, anwsers.Count);
+         texts[i].text = anwsers[rand];
+         anwsers.RemoveAt(rand);
+     }
     }
 
-    IEnumerator TakeDamage()
+    IEnumerator timer()
     {
-        hp.value -= 1;
-        yield return null;
-    }
-
-    
-    public void Feed()
-    {
-        _buttonIspressed = true;
-        
-        StartCoroutine(Idle());
-    }
-
-    private void FixedUpdate()
-    {
-        timer.value = _timeLeft;
-        _timeOut += 1 * Time.deltaTime;
-        if (_timeOut >= 1)
+        Timer.text = time.ToString();
+        time = 5;
+        stopTime = false;
+        while (time > 0)
         {
-            _timeLeft -= 1;
-            _timeOut = 0;
+            if (!stopTime)
+            {
+                time--;
+                yield return new WaitForSeconds(1);
+            }
+            else yield break;
         }
-        return;
+
     }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(5);
+        
+
+    }
+
+    public void TakeDamage()
+    {
+        _hp.value -= 1;
+        if (_hp.value <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+}
+[System.Serializable]
+public class QuestionList
+{
+    public string question;
+    public string[] anwsers = new string[4];
 }
