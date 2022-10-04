@@ -65,7 +65,7 @@ public class AnimalController : MonoBehaviour
     }
 
     void QuestionGenerate()
-    {
+    {        
         StartCoroutine(timer());
         crntQ = qList[Random.Range(0, qList.Count)] as QuestionList;
      text.text = crntQ.question;
@@ -89,14 +89,19 @@ public class AnimalController : MonoBehaviour
         while (time > 0)
         {
             if (!stopTime)
-            {
+            {                
                 time--;
                 Timer.text = time.ToString();
-                yield return new WaitForSeconds(1);
-            }
+                yield return new WaitForSeconds(1);                
+            }           
             else yield break;
         }
 
+        //if (time <= 0)
+        //{
+        //    panel.SetActive(false);
+        //    TakeDamage();
+        //}
     }
     IEnumerator Wait()
     {
