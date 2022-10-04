@@ -633,26 +633,38 @@ MonoBehaviour:
   - question: Feed me!
     anwsers:
     - Feed
-    - Wash
+    - Play
     - Comb
     - Stroke
   - question: Wash me!
     anwsers:
     - Wash
-    - Feed
+    - Heal
     - Comb
     - Stroke
   - question: Comb me!
     anwsers:
     - Comb
     - Feed
-    - Stroke
-    - Wash
+    - Heal
+    - Play
   - question: Stroke me!
     anwsers:
     - Stroke
     - Wash
     - Feed
+    - Comb
+  - question: Play with me!
+    anwsers:
+    - Play
+    - Wash
+    - Heal
+    - Comb
+  - question: Heal me!
+    anwsers:
+    - Heal
+    - Wash
+    - Stroke
     - Comb
   text: {fileID: 787213160}
   texts:
@@ -2252,7 +2264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172587304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.65, y: -3.27, z: 0}
+  m_LocalPosition: {x: -6.82, y: -3.17, z: 0}
   m_LocalScale: {x: 0.5619, y: 0.5619, z: 0.5619}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6842,7 +6854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2000
+  m_text: 3000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
   m_sharedMaterial: {fileID: -2586926031875182526, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
@@ -9561,7 +9573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1200
+  m_text: 1800
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
   m_sharedMaterial: {fileID: -2586926031875182526, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
@@ -16355,7 +16367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3500
+  m_text: 5000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
   m_sharedMaterial: {fileID: -2586926031875182526, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
@@ -16636,19 +16648,31 @@ MonoBehaviour:
     anwsers:
     - Wash
     - Feed
-    - Comb
+    - Heal
     - Stroke
   - question: Comb me!
     anwsers:
     - Comb
-    - Feed
+    - Play
     - Stroke
-    - Wash
+    - Heal
   - question: Stroke me!
     anwsers:
     - Stroke
     - Wash
     - Feed
+    - Comb
+  - question: Play with me!
+    anwsers:
+    - Play
+    - Wash
+    - Feed
+    - Heal
+  - question: Heal me!
+    anwsers:
+    - Heal
+    - Wash
+    - Play
     - Comb
   text: {fileID: 173943928}
   texts:
@@ -18185,7 +18209,7 @@ MonoBehaviour:
     anwsers:
     - Feed
     - Wash
-    - Comb
+    - Heal
     - Stroke
   - question: Wash me!
     anwsers:
@@ -18196,13 +18220,25 @@ MonoBehaviour:
   - question: Comb me!
     anwsers:
     - Comb
-    - Feed
+    - Heal
     - Stroke
-    - Wash
+    - Play
   - question: Stroke me!
     anwsers:
     - Stroke
     - Wash
+    - Feed
+    - Comb
+  - question: Play with me!
+    anwsers:
+    - Play
+    - Wash
+    - Feed
+    - Comb
+  - question: Heal me!
+    anwsers:
+    - Heal
+    - Play
     - Feed
     - Comb
   text: {fileID: 1106729020}
@@ -18398,7 +18434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 400
+  m_text: 800
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
   m_sharedMaterial: {fileID: -2586926031875182526, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
@@ -19351,7 +19387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2800
+  m_text: 4000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
   m_sharedMaterial: {fileID: -2586926031875182526, guid: a41a44cd5232aad49a697f9941d2a454, type: 2}
@@ -20015,8 +20051,8 @@ MonoBehaviour:
     anwsers:
     - Feed
     - Wash
-    - Comb
-    - Stroke
+    - Play
+    - Heal
   - question: Wash me!
     anwsers:
     - Wash
@@ -20027,12 +20063,24 @@ MonoBehaviour:
     anwsers:
     - Comb
     - Feed
-    - Stroke
+    - Heal
     - Wash
   - question: Stroke me!
     anwsers:
     - Stroke
     - Wash
+    - Feed
+    - Play
+  - question: Play with me!
+    anwsers:
+    - Play
+    - Wash
+    - Feed
+    - Comb
+  - question: Heal me!
+    anwsers:
+    - Heal
+    - Play
     - Feed
     - Comb
   text: {fileID: 701167808}
@@ -21019,7 +21067,7 @@ MonoBehaviour:
     - Wash
     - Feed
     - Comb
-    - Stroke
+    - Heal
   - question: Comb me!
     anwsers:
     - Comb
@@ -21031,6 +21079,18 @@ MonoBehaviour:
     - Stroke
     - Wash
     - Feed
+    - Comb
+  - question: Play with me!
+    anwsers:
+    - Play
+    - Wash
+    - Feed
+    - Heal
+  - question: Heal me!
+    anwsers:
+    - Heal
+    - Wash
+    - Play
     - Comb
   text: {fileID: 677251047}
   texts:
@@ -23242,12 +23302,12 @@ MonoBehaviour:
     anwsers:
     - Feed
     - Wash
-    - Comb
+    - Play
     - Stroke
   - question: Wash me!
     anwsers:
     - Wash
-    - Feed
+    - Play
     - Comb
     - Stroke
   - question: Comb me!
@@ -23255,13 +23315,25 @@ MonoBehaviour:
     - Comb
     - Feed
     - Stroke
-    - Wash
+    - Heal
   - question: Stroke me!
     anwsers:
     - Stroke
     - Wash
+    - Play
+    - Comb
+  - question: Play with me!
+    anwsers:
+    - Play
+    - Heal
     - Feed
     - Comb
+  - question: Heal me!
+    anwsers:
+    - Heal
+    - Wash
+    - Feed
+    - Play
   text: {fileID: 627680613}
   texts:
   - {fileID: 1407676646}

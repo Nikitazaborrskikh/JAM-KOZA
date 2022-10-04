@@ -12,8 +12,8 @@ public class OnClickScore : MonoBehaviour
 
     public TMP_Text _scoreText;
 
-    private int _scoreClickTrue = 400;
-    private int _scoreClickFAlse = 200;
+    private int _scoreClickTrue = 500;
+    private int _scoreClickFAlse = 400;
     [HideInInspector] public int _score = 0;
     private int _falseScore;
 

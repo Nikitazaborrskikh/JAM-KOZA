@@ -26,9 +26,9 @@ public class ShopOne : MonoBehaviour
     public void OnBuyAnimal()
     {
 
-        if (GetComponentInParent<OnClickScore>()._score >= 1200)
+        if (GetComponentInParent<OnClickScore>()._score >= 1800)
         {
-            GetComponentInParent<OnClickScore>()._score -= 1200;
+            GetComponentInParent<OnClickScore>()._score -= 1800;
             GetComponentInParent<OnClickScore>().Buy();
             _animalPrefab.SetActive(true);
             _gameController.SetActive(true);

@@ -130,5 +130,5 @@ public class AnimalController : MonoBehaviour
 public class QuestionList
 {
     public string question;
-    public string[] anwsers = new string[4];
+    public string[] anwsers = new string[6];
 }
