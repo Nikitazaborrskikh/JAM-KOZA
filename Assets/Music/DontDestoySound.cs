@@ -10,4 +10,14 @@ public class DontDestoySound : MonoBehaviour
     {
         DontDestroyOnLoad(_audioSource);
     }
+
+    public void OffMusic()
+    {
+        _audioSource.Stop();
+    }
+
+    public void OnMusic()
+    {
+        _audioSource.Play();
+    }
 }
