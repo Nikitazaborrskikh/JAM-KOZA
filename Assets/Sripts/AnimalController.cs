@@ -97,11 +97,12 @@ public class AnimalController : MonoBehaviour
             else yield break;
         }
 
-        //if (time <= 0)
-        //{
-        //    panel.SetActive(false);
-        //    TakeDamage();
-        //}
+        if (time <= 0)
+        {
+            panel.SetActive(false);
+            TakeDamage();
+            StartCoroutine(Wait());
+        }
     }
     IEnumerator Wait()
     {
