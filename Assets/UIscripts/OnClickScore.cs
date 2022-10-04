@@ -10,19 +10,21 @@ public class OnClickScore : MonoBehaviour
     
     private bool _correctButtonIsPressed = false;
 
-    [SerializeField] private TMP_Text _scoreText;
+    public TMP_Text _scoreText;
 
     private int _scoreClickTrue = 400;
     private int _scoreClickFAlse = 200;
-    private int _score;
+    [HideInInspector] public int _score = 0;
     private int _falseScore;
+
+   
 
     
 
     private void Awake()
     {
-        _scoreText.text = "0";
-       
+        _scoreText.text = _score.ToString();
+        
     }
 
     private void Update()
@@ -52,11 +54,13 @@ public class OnClickScore : MonoBehaviour
 
     public void Buy()
     {
-        if (_score > 400)
-        {
-            _score -= 400;
-            _scoreText.text = _score.ToString();            
-        }      
+        _scoreText.text = _score.ToString();
+
+        //if (_score > 400)
+        //{
+        //    _score -= 400;
+        //    _scoreText.text = _score.ToString();
+        //}
     }
 
     public void BuyTwo()

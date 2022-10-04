@@ -15,7 +15,9 @@ public class Shop : MonoBehaviour
     //[SerializeField] private Vector3 _roomPosition;
 
 
-    public OnClickScore onClickScore;
+    //public OnClickScore onClickScore;
+
+    private int _cost = 400;
 
     private void Update()
     {
@@ -25,11 +27,16 @@ public class Shop : MonoBehaviour
    
 
     public void OnBuyAnimal()
-    {       
-        _animalPrefab.SetActive(true);
-        _gameController.SetActive(true);
-        //_openAll.OpenAll();
-        _buttonBuy.SetActive(false);
+    {
+        if (GetComponentInParent<OnClickScore>()._score >= 400)
+        {
+            GetComponentInParent<OnClickScore>()._score -= 400;
+            GetComponentInParent<OnClickScore>().Buy();
+            _animalPrefab.SetActive(true);
+            _gameController.SetActive(true);
+            //_openAll.OpenAll();
+            _buttonBuy.SetActive(false);
+        }   
     }
 
     public void DeathAnimal()

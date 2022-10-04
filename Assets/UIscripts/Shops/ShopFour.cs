@@ -25,10 +25,15 @@ public class ShopFour : MonoBehaviour
     public void OnBuyAnimal()
     {
 
-        _animalPrefab.SetActive(true);
-        _gameController.SetActive(true);
-        //_openAll.OpenAll();
-        _buttonBuy.SetActive(false);
+        if (GetComponentInParent<OnClickScore>()._score >= 3500)
+        {
+            GetComponentInParent<OnClickScore>()._score -= 3500;
+            GetComponentInParent<OnClickScore>().Buy();
+            _animalPrefab.SetActive(true);
+            _gameController.SetActive(true);
+            //_openAll.OpenAll();
+            _buttonBuy.SetActive(false);
+        }
     }
 
     public void DeathAnimal()

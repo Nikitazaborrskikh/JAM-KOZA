@@ -84,7 +84,7 @@ public class AnimalController : MonoBehaviour
         _piscSound.Play();
         panel.SetActive(true);
         Timer.text = time.ToString();
-        time = 6;
+        time = 11;
         stopTime = false;
         while (time > 0)
         {
